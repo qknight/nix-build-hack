@@ -2,11 +2,7 @@ with import <nixpkgs> {};
 
 stdenv.mkDerivation rec {
   name = "nix-build-view";
-  src = fetchgit {
-    url = "https://github.com/qknight/${name}";
-    rev = "311110e59e185eb1015dcfd34b30f31a862503bc";
-    sha256 = "10wqq9jh1vc83grnmi1ds130i5w8665zm1fg84bncbik03farnch";
-  };
+  src = ./.;
   buildInputs = [ ncurses cmake ];
   configurePhase ="";
   buildPhase = ''
